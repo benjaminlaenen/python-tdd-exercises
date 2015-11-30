@@ -89,8 +89,10 @@ def histogram(l):
     """
     Converts a list of integers into a simple string histogram.
     """
-    return None
-
+    res = []
+    for i in l:
+       res.append("#" * i)
+    return "\n".join(res)
 
 def test_histogram():
     assert histogram([2, 5, 1]) == '##\n#####\n#'
