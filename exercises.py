@@ -162,7 +162,19 @@ def base_pair(c):
     of the base pair. If the base is not recognized,
     return 'unknown'.
     """
-    return None
+    if c in ["A", "T", "C", "G", "a", "t", "c", "g"]:
+        tmp = c.lower()
+        if tmp == "a":
+            res = "t"
+        if tmp == "t":
+            res = "a"
+        if tmp == "c":
+            res = "g"
+        if tmp == "g":
+            res = "c"
+    else:
+        res = "unknown"
+    return res
 
 
 def test_base_pair():
