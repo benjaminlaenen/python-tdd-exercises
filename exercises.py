@@ -142,7 +142,11 @@ def validate_dna(s):
     Return True if the DNA string only contains characters
     a, c, t, or g (lower or uppercase). False otherwise.
     """
-    return None
+    for i in s:
+        if  i in ["A", "T", "C", "G", "a", "t", "c", "g"]:
+            return True
+        else:
+            return False
 
 
 def test_validate_dna():
