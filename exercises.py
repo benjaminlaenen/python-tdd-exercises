@@ -302,7 +302,16 @@ def get_3mer_usage_chart(s):
     The list is alphabetically sorted by the name
     of the 3-mer.
     """
-    return None
+    res = []
+    l=[]
+    for i in range(0, len(s)-4):
+        l.append(s[i:i+3])
+        l.append(s[i+1:i+4])
+        l.append(s[i+2:i+5])
+    tmp = sorted(list(set(l)))
+    for j in tmp:
+        res.append( (j , s.count(j, 0, len(s)) ))
+    return res
 
 
 def test_get_3mer_usage_chart():
