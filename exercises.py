@@ -32,7 +32,11 @@ def is_english_vowel(c):
     Returns True if c is an english vowel
     and False otherwise.
     """
-    return None
+    if c in ["a","o","i","e","u","y","A","O","I","E","U","Y"]:
+        return True
+    else:
+        return None
+
 
 
 def test_is_english_vowel():
