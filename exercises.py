@@ -342,7 +342,14 @@ def read_column(file_name, column_number):
     Reads column column_number from file file_name
     and returns the values as floats in a list.
     """
-    return None
+    import re
+    res = []
+    with open(file_name) as f:
+        for line in f:
+            tmp = re.split(" +|\n", line)
+            if len(tmp) > 2:
+                res.append(float(tmp[column_number - 1]))
+    return res
 
 
 def test_read_column():
