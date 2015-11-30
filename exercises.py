@@ -388,7 +388,20 @@ def character_statistics(file_name):
     Use the isalpha() method to figure out
     whether the character is in the alphabet.
     """
-    return None
+    import string
+    with open(file_name) as f:
+        text = f.read()
+        res = []
+        for i in string.ascii_lowercase[:]:
+            res.append(text.count(i))
+        #use zip to make a dict from two lists
+        D = dict(zip(string.ascii_lowercase[:], res))
+        #remove the zero count
+        for x in list(D.keys()):
+            if D[x] == 0:
+                del D[x]
+
+    return (max(D, key=D.get, ), min(D, key=D.get))
 
 
 def test_character_statistics():
@@ -440,6 +453,7 @@ Be all my sins remember'd."""
 
     # and now we pass the file name to the function which will get the stats
     (most_abundant, least_abundant) = character_statistics(file_name)
+    #q is wrong? j is the least abundant
     assert (most_abundant, least_abundant) == ('e', 'q')
 
     # we remove the temporary file
