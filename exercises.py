@@ -480,4 +480,9 @@ def pythagorean_triples(n):
 # ------------------------------------------------------------------------------
 
 def test_pythagorean_triples():
-    pass  # so far we do not test anything, check also test coverage
+    triples10 = [(3,4,5), (6,8,10)]
+    triples20 = [(3, 4, 5), (6, 8, 10), (5, 12, 13), (9, 12, 15), (8, 15, 17), (12, 16, 20)]
+
+    assert pythagorean_triples(10) == triples10
+    assert pythagorean_triples(20) == triples20
+    assert pythagorean_triples(0) == []
