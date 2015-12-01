@@ -35,10 +35,7 @@ def is_english_vowel(c):
     # A bit shorter solution would be to check whether c.lower() is in a list of only lowercase vowels.
     # Also you could avoid the if check by just returning c.lower() in [...] since this is already a bool.
 
-    c.lower() in ["a","o","i","e","u"]:
-        return True
-    else:
-        return None
+    return c.lower() in ["a","o","i","e","u", "y"]
 
 
 
